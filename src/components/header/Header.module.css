@@ -1,0 +1,134 @@
+header {
+    width: 100%;
+    background: var(--main-blue);
+    font-family: 'Mulish';
+    position: sticky;
+    height: 75px;
+    top: 0;
+    z-index: 9999999999999;
+}
+
+nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 25px;
+    padding-left: 0;
+    padding-right: 0;
+
+    >button {
+        display: none;
+    }
+
+    color: white;
+}
+
+button {
+    background-color: transparent;
+}
+
+.nav__menu {
+    >ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        >li {
+            float: left;
+            list-style: none;
+            padding-bottom: 5px;
+            position: relative;
+
+            >a{
+                text-decoration: none;
+                font-size: 16px;
+                color: var(--color-white);
+                transition: .1s linear;
+                font-weight: 700;
+                color: white;
+                >.active{
+                    color: red !important;
+                }
+            }
+            >a::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 2px;
+                background-color: white;
+                width: 10px;
+                border-radius: 30px;
+                transition: width .2s linear;
+            }
+            >a:hover {
+                    color: #F00;
+                    transition: color .1s linear;
+            }
+            >a:hover::before {
+                width: 110%;
+                background-color: #F00;
+            }
+        }
+
+    }
+
+    >button {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav__menu {
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+        background-color: var(--main-blue);
+        top: 0;
+        left: -150%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999999999999;
+        transition: .3s linear;
+
+        >ul {
+            flex-direction: column;
+
+            >li {
+                >a {
+                    font-size: 16px;
+                    color: var(--color-300);
+                }
+            }
+        }
+
+        >button {
+            display: block;
+            position: absolute;
+            top: 25px;
+            right: 5px;
+        }
+    }
+
+    .nav__menu.navOpen {
+        left: 0;
+    }
+
+    nav {
+        padding-left: 0;
+        padding-right: 0;
+
+        >button {
+            display: flex;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .nav__menu {
+        width: 80%;
+    }
+}

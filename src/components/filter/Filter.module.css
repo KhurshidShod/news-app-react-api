@@ -1,0 +1,47 @@
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    >.filter {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        >input {
+            border: 1px solid var(--main-blue);
+            color: var(--main-blue);
+            width: 175px;
+            height: 30px;
+            padding-left: .5rem;
+            border-radius: 3px;
+            flex-grow: 1;
+        }
+
+        >input::placeholder {
+            color: var(--main-blue);
+        }
+
+        >select {
+            border: 1px solid var(--main-blue);
+            color: var(--main-blue);
+            width: 150px;
+            height: 30px;
+            padding-left: .5rem;
+            border-radius: 3px;
+            flex-grow: 1;
+        }
+    }
+
+    >h1 {
+        font-size: 31px;
+        color: var(--fontColor-black);
+        letter-spacing: 0.1px;
+        line-height: 120%;
+        font-weight: 700;
+    }
+}
